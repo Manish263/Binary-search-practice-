@@ -1,0 +1,29 @@
+class Solution{
+public:	
+	
+	int count(int a[], int n, int x) {
+	   // // code here
+	    int l=0,r=n-1,m,cnt=0;
+	   // while(l<=r){
+    //         m=(l+r)/2;  
+	   //     if(a[m]>x){
+	   //         r=m-1;
+	   //         if(m==0 || a[m]!=a[m-1]){
+	   //             cnt++;
+	   //         }
+	   //     }
+	   //     else if (a[m]<x){
+	   //         l=m+1;
+	   //         if(m==n-1 || a[m]!=a[m+1]) cnt++;
+	   //     }
+	   // }
+	   //// return cnt;
+	   //int *i=lower_bound(a,a+n,x)-a;
+	   //int x=upper_bound(a,a+n,x)-a;
+	   //return x-i;
+	     for(int i=0;i<n;i++){
+	         if(a[i]==x) cnt++;
+	     }
+	     return cnt;
+	}
+};
