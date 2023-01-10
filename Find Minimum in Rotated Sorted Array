@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int n=nums.size();
+        int l=0,r=n-1,m;
+        if(n==2) return min(nums[0],nums[1]);
+        while(l<r){
+            m=(l+r)/2;
+            if(nums[m]>nums[r]){ l=m+1;}
+            else r=m;
+        }
+        if (l==r) return nums[l];
+        return nums[l];
+    }
+};
+
+#algorithm 
+-> cal. mid and as it is sorted array so check corner element with mid if mid>r 
+-> then skip left part because all the elements on that side will be greater than r
+-> as soon as we compare then return left most element after applying BS because min element will be present at leftmost pos.
