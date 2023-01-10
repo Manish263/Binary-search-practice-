@@ -1,0 +1,24 @@
+Q: Given an ascending sorted rotated array Arr of distinct integers of size N. The array is right rotated K times. Find the value of K.
+
+Example 1:
+
+Input:
+N = 5
+Arr[] = {5, 1, 2, 3, 4}
+Output: 1
+Explanation: The given array is 5 1 2 3 4. 
+The original sorted array is 1 2 3 4 5. 
+We can see that the array was rotated 
+1 times to the right.
+
+ANS: 
+    int findKRotation(int nums[], int n) {
+	    int l=0,r=n-1,m;
+	   // if(n==2) return min(0,1);
+        while(l<=r){
+            m=(l+r)/2;
+            if(nums[m]>=nums[0]){ l=m+1;}  if m >first element then left part will alawys have greater element there will be no breaking point in that side.so we skip that side
+            else r=m-1;
+        }
+        return l%n;
+	}
