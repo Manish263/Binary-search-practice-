@@ -1,0 +1,21 @@
+QUESTION: 
+ 
+You are given 2 numbers (n , m); the task is to find n√m (nth root of m).
+
+Example 1:
+
+Input: n = 2, m = 9
+Output: 3
+Explanation: 32 = 9
+
+ANS:
+    long long l=1,r=x,m;
+        while(l<=r){
+            m=(l+r)/2;
+            if(pow(m,n)==x) {
+                return m;
+            }
+            else if (pow(m,n)>x) r=m-1;
+            else l=m+1;
+        }
+        return -1;
